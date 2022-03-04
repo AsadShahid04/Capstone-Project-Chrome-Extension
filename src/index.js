@@ -1,5 +1,5 @@
 import axios from "axios";
-const api = "https://covid19.mathdro.id/api/countries";
+const api = "https://covid19.mathdro.id/api/countries"; //This is the API we are using.
 const errors = document.querySelector(".errors");
 const loading = document.querySelector(".loading");
 const cases = document.querySelector(".cases");
@@ -14,7 +14,7 @@ const form = document.querySelector(".form-data");
 // grab the country name
 const country = document.querySelector(".country-name");
 
-// declare a method to search by country name
+// This a method to search by country name
 const searchForCountry = async countryName => {
   loading.style.display = "block";
   errors.textContent = "";
@@ -28,11 +28,11 @@ const searchForCountry = async countryName => {
   } catch (error) {
     loading.style.display = "none";
     results.style.display = "none";
-    errors.textContent = "We have no data for the country you have requested.";
+    errors.textContent = "Are you sure this is a country? We have no data for the country you have requested.";
   }
 };
 
-// declare a function to handle form submission
+// This is a function to handle form submission
 const handleSubmit = async e => {
   e.preventDefault();
   searchForCountry(country.value);
